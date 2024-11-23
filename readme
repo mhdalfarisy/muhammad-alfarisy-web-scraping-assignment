@@ -1,0 +1,40 @@
+# Project Gutenberg Fiction Scraper
+
+This project is a simple web scraper designed to extract information about fiction books available on [Project Gutenberg](https://www.gutenberg.org). The scraper retrieves data such as book titles, authors, and links to their respective pages, and saves the data in a CSV file for further use.
+
+## Features
+- Extracts book titles, authors, and links from the Project Gutenberg fiction search page.
+- Saves the extracted data in a CSV file (`gutenberg_books.csv`).
+
+## Technologies Used
+- **Python**: Programming language for data extraction and processing.
+- **Requests**: To fetch HTML content from the website.
+- **BeautifulSoup (bs4)**: For parsing and navigating the HTML content.
+- **Pandas**: For storing and saving the data in a structured format.
+
+## How It Works
+
+1. The script sends an HTTP GET request to the Project Gutenberg search page for fiction books.
+2. The HTML content of the page is parsed using `BeautifulSoup`.
+3. The script locates elements containing book information and extracts:
+   - **Title**: The book's title.
+   - **Author**: The book's author (if available).
+   - **Link**: The URL to the book's page on Project Gutenberg.
+4. The extracted data is saved in a CSV file named `gutenberg_books.csv`.
+
+## Output
+
+The output is a CSV file containing the following columns:
+- `Title`: The title of the book.
+- `Author`: The author of the book (or "Unknown" if not available).
+- `Link`: A direct link to the book's page on Project Gutenberg.
+
+## Example
+
+Here is a snippet of the resulting CSV:
+
+| Title               | Author             | Link                                      |
+|---------------------|--------------------|-------------------------------------------|
+| Pride and Prejudice | Jane Austen        | https://www.gutenberg.org/ebooks/1342    |
+| A Tale of Two Cities| Charles Dickens    | https://www.gutenberg.org/ebooks/98      |
+
